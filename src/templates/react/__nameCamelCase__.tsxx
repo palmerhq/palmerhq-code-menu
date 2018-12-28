@@ -1,0 +1,21 @@
+import * as React from 'react';
+
+export interface <%= nameCamelCase %>Props {
+
+}
+
+export interface <%= nameCamelCase %>State {
+
+}
+
+export class class <%= nameCamelCase %> extends React.Component<<%= nameCamelCase %>Props, <%= nameCamelCase %>State> {
+  state = {};
+  
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+}

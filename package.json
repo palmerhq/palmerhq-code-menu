@@ -1,0 +1,52 @@
+{
+    "name": "palmerhq-code-menu",
+    "displayName": "palmerhq-code-menu",
+    "description": "The Palmer Group's tree-view menu items",
+    "version": "0.2.1",
+    "publisher": "jaredpalmer",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.new-component"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/palmerhq/palmerhq-code-menu"
+    },
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.new-component",
+            "title": "New component"
+        }],
+        "menus": {
+            "explorer/context": [{
+                "when": "explorerResourceIsFolder",
+                "command": "extension.new-component",
+                "group": "PalmerHQCodeMenu@1"
+            }]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "copy": "rm -rf out/templates; cp -R src/templates out/templates",
+        "compile": "npm run copy; tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "5.2.3",
+        "@types/node": "10.3.4",
+        "typescript": "2.9.2",
+        "vscode": "1.1.18"
+    },
+    "dependencies": {
+        "directory-tree": "2.1.0",
+        "lodash": "4.17.10"
+    }
+}
