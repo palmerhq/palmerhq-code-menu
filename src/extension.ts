@@ -82,6 +82,7 @@ export function activate(context: vscode.ExtensionContext) {
               const transformedContents = compiled(props);
               console.log('Create file:', newPath);
               fs.writeFileSync(newPath, transformedContents);
+              vscode.workspace.openTextDocument(newPath);
             }
           } catch (err) {
             console.log('Failed creating file/folder', err);
