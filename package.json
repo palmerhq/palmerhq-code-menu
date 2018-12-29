@@ -2,7 +2,7 @@
     "name": "palmerhq-code-menu",
     "displayName": "palmerhq-code-menu",
     "description": "The Palmer Group's tree-view menu items",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "jaredpalmer",
     "engines": {
         "vscode": "^1.16.0"
